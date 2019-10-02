@@ -8,7 +8,7 @@
 echo -e "\u001b[32;1mSetting up Dotfiles...\u001b[0m"
 
 # Back up existing files
-o -e "\u001b[33;1m Backing up existing files... \u001b[0m"
+echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
 mv -iv ~/.Xresources ~/.Xresources.old
 mv -iv ~/.xsession ~/.xsession
 mv -iv ~/.vimrc ~/.vimrc.old
