@@ -4,7 +4,7 @@ Not _all_ dotfiles are included, but these are the ones that I actively alter to
 Included is a setup script, _dot.sh_, which back ups current dotfiles in ~/ and replaces them with symbolic links to the content of this repository.
 
 ## Background
-I currently run DWM alongside GNOME (sue me!) on Ubuntu 18.04. As such, my _.xsession_ serves as both my _.xinirc_ and _.profile_.
+I currently run both dwm and GNOME (sue me!) on Ubuntu 18.04. As such, my _.xsession_ serves as my _.xinirc_.
 The following desktop entry (#.desktop) is placed in _/usr/share/xsessions_. 
 
 ``` Ini
