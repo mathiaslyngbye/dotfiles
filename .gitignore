@@ -1,2 +1,2 @@
-suckless/*
+suckless/*/
 !suckless/*/config.h
