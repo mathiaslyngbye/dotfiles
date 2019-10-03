@@ -7,7 +7,7 @@ Included is a setup script, _dot.sh_, which back ups current dotfiles in ~/ and 
 I currently run DWM alongside GNOME (sue me!) on Ubuntu 18.04. As such, my _.xsession_ serves as both my _.xinirc_ and _.profile_.
 The following desktop entry (#.desktop) is placed in _/usr/share/xsessions_. 
 
-```bash
+``` Ini
 [Desktop Entry]
 Encoding=UTF-8
 Name=WM from Xsession
