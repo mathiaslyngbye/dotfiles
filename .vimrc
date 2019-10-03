@@ -1,4 +1,4 @@
-" --- Layout --- "
+"--- Layout --- "
 set number          " Enable line numbers
 syntax on           " Enable syntax highlighting
 set background=dark " Set default colors
@@ -18,4 +18,8 @@ set noswapfile
 " --- history / file handling ---
 set history=999     " Increase history (default 20)
 set undolevels=999  " Increase undos (default 100)
-set autoread        " Reload files if changed externally
+set autoread        " Reload files if changed externallyi
+
+" --- navigation ---
+set mouse a         " Enable click to set cursor (sue me!)
+
