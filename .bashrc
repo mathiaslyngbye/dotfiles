@@ -57,7 +57,30 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Define color scheme
+    bold='';
+    reset="\033[00m";
+    black="\033[1;30m";
+    red="\033[1;31m";
+    green="\033[1;32m";
+    yellow="\033[1;33m";
+    blue="\033[1;34m";
+    purple="\033[1;35m";
+    cyan="\033[1;36m";
+    white="\033[1;37m";
+
+    # Set PS1
+    PS1="${debian_chroot:+($debian_chroot)}";
+    PS1+="\[${green}\]\u";
+    PS1+="\[${green}\]@";
+    PS1+="\[${green}\]\h";
+    PS1+="\[${white}\]:";
+    PS1+="\[${blue}\]\w";
+    PS1+="\[${white}\][\$?]";
+    PS1+="\[${reset}\]\$ ";
+
+    # Default PS1
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     #GREEN="\[$(tput setaf 2)\]"
     #RESET="\[$(tput sgr0)\]"
     #PS1="${GREEN}\[\e[1m\]\w\$\[\e[0m\] ${RESET}"
@@ -122,9 +145,3 @@ fi
 #ROBWORK#
 export RW_ROOT=~/RobWork/RobWork/
 export RWS_ROOT=~/RobWork/RobWorkStudio/
-
-#Java doesn't like non-re-parenting window managers (i.e. dwm). We need to tell java that we do not re-parent.
-#export _JAVA_AWT_WM_NONREPARENTING=1
-#export JAVA_AWT_WM_NONREPARENTING=1
-
-#Hej Mathias, dette er en besked fra Mathias. 13/09-19. Du er på toilet.
