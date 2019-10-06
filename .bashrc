@@ -76,7 +76,7 @@ if [ "$color_prompt" = yes ]; then
     PS1+="\[${green}\]\h";
     PS1+="\[${white}\]:";
     PS1+="\[${blue}\]\w";
-    PS1+="\[${white}\][\$?]";
+    PS1+="\[${white}\][\$? \$(jobs | wc -l)]";
     PS1+="\[${reset}\]\$ ";
 
     # Default PS1
