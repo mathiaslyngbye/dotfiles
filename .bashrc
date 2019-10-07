@@ -68,12 +68,26 @@ if [ "$color_prompt" = yes ]; then
     purple="\033[1;35m";
     cyan="\033[1;36m";
     white="\033[1;37m";
+    
+    # Highlight the user name when logged in as root.
+    if [[ "${USER}" == "root" ]]; then
+        userStyle="${red}";
+    else
+        userStyle="${green}";
+    fi;
+
+    # Highlight the hostname when connected via SSH.
+    if [[ "${SSH_TTY}" ]]; then
+        hostStyle="${red}";
+    else
+        hostStyle="${green}";
+    fi;
 
     # Set PS1
     PS1="${debian_chroot:+($debian_chroot)}";
-    PS1+="\[${green}\]\u";
+    PS1+="\[${userStyle}\]\u";
     PS1+="\[${green}\]@";
-    PS1+="\[${green}\]\h";
+    PS1+="\[${hostStyle}\]\h";
     PS1+="\[${white}\]:";
     PS1+="\[${blue}\]\w";
     PS1+="\[${white}\][\$? \$(jobs | wc -l)]";
@@ -81,9 +95,6 @@ if [ "$color_prompt" = yes ]; then
 
     # Default PS1
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    #GREEN="\[$(tput setaf 2)\]"
-    #RESET="\[$(tput sgr0)\]"
-    #PS1="${GREEN}\[\e[1m\]\w\$\[\e[0m\] ${RESET}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
