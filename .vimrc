@@ -2,7 +2,6 @@
 set number          " Enable line numbers
 syntax on           " Enable syntax highlighting
 set background=dark " Set default colors
-set title
 
 " --- indentation and text wrap ---
 set tabstop=4       " Tab is # spaces
@@ -27,6 +26,8 @@ set autoread        " Reload files if changed externallyi
 set mouse=a         " Enable click to set cursor (sue me!)
 set cursorline      " Highlight cursor line
 
-" --- misc ---
+" --- tty ---
 set ttyfast         " make laggy connections work faster
 
+" --- misc ---
+autocmd FileType make setlocal noexpandtab softtabstop=0
