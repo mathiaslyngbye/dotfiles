@@ -10,6 +10,8 @@ set shiftwidth=4    " The # of spaces for indenting
 set softtabstop=4   " Tab key results in # spaces
 set expandtab       " Expand tabs to spaces
 set nowrap          " Don't wrap text
+set autoindent      " Indent line according to previous line
+set smartindent     " Indents according to syntax
 
 " --- backup and swap files --- 
 set nobackup
