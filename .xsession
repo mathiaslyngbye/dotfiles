@@ -5,25 +5,27 @@ xsetroot -solid "#000000"
 
 # Define dwm status message
 print_bat(){
-    capacity="$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)"
-    status="$(cat /sys/class/power_supply/BAT*/status)"
+    if [ -e "/sys/class/power_supply/BAT0" ]; then
+        capacity="$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)"
+        status="$(cat /sys/class/power_supply/BAT*/status)"
+   
+        if [ "$status" != "Unknown" ]
+        then
+            case "$status" in
+                Charging)
+                    status_short="CHR"
+                    ;;
+                Discharging)
+                    status_short="BAT"
+                    ;;
+                Full)
+                    status_short="FULL"
+                    ;;
+            esac
     
-    case "$status" in
-        Charging)
-            status_short="CHR"
-            ;;
-        Discharging)
-            status_short="BAT"
-            ;;
-    esac
-
-    #if [ $status = "Charging" ]; then
-    #    status_short="CHR"
-    #else
-    #    status_short="BAT"
-    #fi
-    
-    echo -e "[${status_short}: ${capacity}%]"
+            echo -e "[${status_short}: ${capacity}%]"
+        fi
+    fi
 }
 
 print_date(){
