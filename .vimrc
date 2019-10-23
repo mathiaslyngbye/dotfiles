@@ -1,5 +1,6 @@
 " --- Layout ------------------------------------------------------------------
 set number                  " Enable line numbers
+"set relativenumber          " Set relative numbering (good with :10j, etc.)
 syntax on                   " Enable syntax highlighting
 set background=dark         " Set default colors
 colo delek
@@ -26,6 +27,7 @@ set autoread                " Reload files if changed externally
 
 " --- Navigation --------------------------------------------------------------
 set mouse=a                 " Enable click to set cursor (sue me!)
+set ttymouse=sgr            " Enable scrolling
 "set cursorline             " Highlight cursor line
 
 " --- tty ---------------------------------------------------------------------
