@@ -44,13 +44,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define XF86MonBrightnessDown   0x1008ff03
-#define XF86MonBrightnessUp     0x1008ff02
-#define XF86AudioMute           0x1008ff12
-#define XF86AudioLowerVolume    0x1008ff11
-#define XF86AudioRaiseVolume    0x1008ff13
-/*#define MODKEY Mod1Mask*/
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -64,12 +58,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *cmdsoundup[] = { "pactl", "set-sink-volume", "0", "+5%", NULL }; 
-static const char *cmdsounddown[] = { "pactl", "set-sink-volume", "0", "-5%",  NULL }; 
-static const char *cmdsoundtoggle[] = { "pactl", "set-sink-mute", "0", "toggle", NULL }; 
-static const char *cmdbrightnessup[] = { "xbacklight", "-inc", "5", "-time", "0", NULL };
-static const char *cmdbrightnessdown[] = { "xbacklight", "-dec", "5", "-time", "0", NULL };
-/*static const char *cmdlock[] = {"slock", NULL }; */
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -95,12 +84,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-    /*{ Mod4Mask,                     XK_l,      spawn,          {.v = cmdlock } },*/
-    { 0,                            XF86AudioMute,          spawn,  {.v = cmdsoundtoggle } }, 
-    { 0,                            XF86AudioRaiseVolume,   spawn,  {.v = cmdsoundup } }, 
-    { 0,                            XF86AudioLowerVolume,   spawn,  {.v = cmdsounddown } }, 
-    { 0,                            XF86MonBrightnessDown,  spawn,  {.v = cmdbrightnessdown } }, 
-    { 0,                            XF86MonBrightnessUp,    spawn,  {.v = cmdbrightnessup } }, 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

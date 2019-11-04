@@ -1,0 +1,15 @@
+[submodule "suckless/suckless/dmenu"]
+	path = suckless/suckless/dmenu
+	url = https://git.suckless.org/dmenu
+[submodule "suckless/dmenu"]
+	path = suckless/dmenu
+	url = https://git.suckless.org/dmenu
+[submodule "suckless/slock"]
+	path = suckless/slock
+	url = https://git.suckless.org/slock
+[submodule "suckless/surf"]
+	path = suckless/surf
+	url = https://git.suckless.org/surf
+[submodule "suckless/wmname"]
+	path = suckless/wmname
+	url = https://git.suckless.org/wmname

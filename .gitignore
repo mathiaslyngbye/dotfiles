@@ -1,0 +1,5 @@
+# Unmodified suckless software
+./suckless/*
+!./suckless/st
+!./suckless/dwm/
+
