@@ -38,8 +38,8 @@ print_time(){
 # while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
 #while xsetroot -name "$(print_bat) | $(print_date) | $(print_time)"
 #while xsetroot -name "$(print_bat) $(print_date), $(print_time)"
-#while xsetroot -name "$(print_bat) `date` `uptime | sed 's/.*,//'`"
-while xsetroot -name "$(print_bat) $(date "+%b %d, %H:%M")"
+while xsetroot -name "$(print_bat) `date` `uptime | sed 's/.*,//'`"
+#while xsetroot -name "$(print_bat) $(date "+%b %d, %H:%M")"
 do
    	sleep 1
 done &
