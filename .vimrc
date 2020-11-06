@@ -1,10 +1,9 @@
 " --- Layout ------------------------------------------------------------------
 set number                  " Enable line numbers
-"set relativenumber          " Set relative numbering (good with :10j, etc.)
 syntax on                   " Enable syntax highlighting
 set background=dark         " Set default colors
-colo delek
 set colorcolumn=80          " Highlight column 80
+set laststatus=2            " Enable status bar always2
 
 " --- Indentation and text wrap -----------------------------------------------
 set tabstop=4               " Tab is # spaces
@@ -34,7 +33,8 @@ set ttymouse=sgr            " Enable scrolling
 set ttyfast                 " Make laggy connections work faster
 
 " --- Clipboard ---------------------------------------------------------------
-set clipboard=unnamedplus   " Use system clipboard (requires vim-gtk)
+"set clipboard=unnamedplus   " Use system clipboard (requires vim-gtk)
 
 " --- Misc. -------------------------------------------------------------------
 autocmd FileType make setlocal noexpandtab softtabstop=0
+set timeout timeoutlen=5000 ttimeoutlen=100
