@@ -4,6 +4,7 @@ syntax on                   " Enable syntax highlighting
 set background=dark         " Set default colors
 set colorcolumn=80          " Highlight column 80
 set laststatus=2            " Enable status bar always2
+set scrolloff=3             " Pad top and bottom with lines
 
 " --- Indentation and text wrap -----------------------------------------------
 set tabstop=4               " Tab is # spaces
@@ -27,14 +28,14 @@ set autoread                " Reload files if changed externally
 " --- Navigation --------------------------------------------------------------
 set mouse=a                 " Enable click to set cursor (sue me!)
 set ttymouse=sgr            " Enable scrolling
-"set cursorline             " Highlight cursor line
-
-" --- tty ---------------------------------------------------------------------
-set ttyfast                 " Make laggy connections work faster
 
 " --- Clipboard ---------------------------------------------------------------
-"set clipboard=unnamedplus   " Use system clipboard (requires vim-gtk)
+"set clipboard=unnamedplus  " Use system clipboard (requires vim-gtk)
 
 " --- Misc. -------------------------------------------------------------------
 autocmd FileType make setlocal noexpandtab softtabstop=0
 set timeout timeoutlen=5000 ttimeoutlen=100
+
+" --- speedup ---------------------------------------------------------------------
+set ttyfast                 " Make laggy connections work faster
+set lazyredraw
