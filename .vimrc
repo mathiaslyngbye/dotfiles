@@ -5,6 +5,7 @@ set background=dark         " Set default colors
 set colorcolumn=80          " Highlight column 80
 set laststatus=2            " Enable status bar always2
 set scrolloff=3             " Pad top and bottom with lines
+colo torte
 
 " --- Indentation and text wrap -----------------------------------------------
 set tabstop=4               " Tab is # spaces
