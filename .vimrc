@@ -5,7 +5,7 @@ set background=dark         " Set default colors
 set colorcolumn=80          " Highlight column 80
 set laststatus=2            " Enable status bar always2
 set scrolloff=3             " Pad top and bottom with lines
-
+set wildmenu
 colo torte
 
 " --- Indentation and text wrap -----------------------------------------------
