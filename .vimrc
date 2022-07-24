@@ -5,6 +5,7 @@ set background=dark         " Set default colors
 set colorcolumn=80          " Highlight column 80
 set laststatus=2            " Enable status bar always2
 set scrolloff=3             " Pad top and bottom with lines
+
 colo torte
 
 " --- Indentation and text wrap -----------------------------------------------
@@ -21,7 +22,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" --- history / file handling -------------------------------------------------
+" --- History / file handling -------------------------------------------------
 set history=999             " Increase history (default 20)
 set undolevels=999          " Increase undos (default 100)
 set autoread                " Reload files if changed externally                       
@@ -37,6 +38,6 @@ set ttymouse=sgr            " Enable scrolling
 autocmd FileType make setlocal noexpandtab softtabstop=0
 set timeout timeoutlen=5000 ttimeoutlen=100
 
-" --- speedup ---------------------------------------------------------------------
+" --- Speedup -----------------------------------------------------------------
 set ttyfast                 " Make laggy connections work faster
 set lazyredraw
