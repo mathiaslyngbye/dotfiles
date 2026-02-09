@@ -8,7 +8,6 @@ git submodule init
 repo="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 dest="$HOME"
 
-# Install: merge directories, overwrite files
 rsync -a \
   --exclude='.git/' \
   --exclude='.gitignore' \
