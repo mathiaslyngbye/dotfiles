@@ -1,3 +1,9 @@
+" Load pathogen if exists
+runtime! bundle/pathogen/autoload/pathogen.vim
+if exists('*pathogen#infect')
+  call pathogen#infect()
+endif
+
 " Syntax highlighting
 filetype plugin on
 syntax on
