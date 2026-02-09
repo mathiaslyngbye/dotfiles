@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+git clean -dffx
+git submodule update --init --recursive
+git submodule init
+
+repo="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+dest="$HOME"
+
+# Install: merge directories, overwrite files
+rsync -a \
+  --exclude='.git/' \
+  --exclude='.gitignore' \
+  --exclude='.gitmodules' \
+  --exclude='README.md' \
+  --exclude='setup' \
+  "$repo"/ "$dest"/
+
+echo "Installed dotfiles -> $dest"
+
